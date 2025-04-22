@@ -1,5 +1,5 @@
 {
-  "name": "lessname/cache",
+  "name": "lesname/cache",
   "license": "MIT",
   "require": {
     "php": "^8.4.0",
@@ -16,12 +16,12 @@
   },
   "autoload": {
     "psr-4": {
-      "LessCache\\": "src/"
+      "LesCache\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "LessCacheTest\\": "test/"
+      "LesCacheTest\\": "test/"
     }
   }
 }

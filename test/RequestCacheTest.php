@@ -1,14 +1,14 @@
 <?php
 declare(strict_types=1);
 
-namespace LessCacheTest;
+namespace LesCacheTest;
 
 use DateInterval;
-use LessCache\RequestCache;
+use LesCache\RequestCache;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \LessCache\RequestCache
+ * @covers \LesCache\RequestCache
  */
 final class RequestCacheTest extends TestCase
 {

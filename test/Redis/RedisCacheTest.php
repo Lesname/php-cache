@@ -1,15 +1,15 @@
 <?php
 declare(strict_types=1);
 
-namespace LessCacheTest\Redis;
+namespace LesCacheTest\Redis;
 
 use DateInterval;
-use LessCache\Redis\RedisCache;
+use LesCache\Redis\RedisCache;
 use PHPUnit\Framework\TestCase;
 use Redis;
 
 /**
- * @covers \LessCache\Redis\RedisCache
+ * @covers \LesCache\Redis\RedisCache
  */
 final class RedisCacheTest extends TestCase
 {

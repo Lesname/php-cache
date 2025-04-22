@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace LessCache\Redis;
+namespace LesCache\Redis;
 
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\ContainerInterface;
