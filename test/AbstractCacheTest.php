@@ -1,13 +1,13 @@
 <?php
 declare(strict_types=1);
 
-namespace LessCacheTest;
+namespace LesCacheTest;
 
-use LessCache\AbstractCache;
+use LesCache\AbstractCache;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \LessCache\AbstractCache
+ * @covers \LesCache\AbstractCache
  */
 final class AbstractCacheTest extends TestCase
 {

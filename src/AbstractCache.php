@@ -1,8 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace LessCache;
+namespace LesCache;
 
+use Override;
 use DateInterval;
 use Psr\SimpleCache\CacheInterface;
 use Psr\SimpleCache\InvalidArgumentException;
@@ -17,6 +18,7 @@ abstract class AbstractCache implements CacheInterface
      *
      * @throws InvalidArgumentException
      */
+    #[Override]
     public function getMultiple(iterable $keys, mixed $default = null): iterable
     {
         foreach ($keys as $key) {
@@ -33,6 +35,7 @@ abstract class AbstractCache implements CacheInterface
      * @psalm-suppress MixedAssignment unknown values
      * @psalm-suppress MoreSpecificImplementedParamType $values keys need to be strings
      */
+    #[Override]
     public function setMultiple(iterable $values, null|int|DateInterval $ttl = null): bool
     {
         foreach ($values as $key => $value) {
@@ -49,6 +52,7 @@ abstract class AbstractCache implements CacheInterface
      *
      * @throws InvalidArgumentException
      */
+    #[Override]
     public function deleteMultiple(iterable $keys): bool
     {
         foreach ($keys as $key) {

@@ -1,11 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace LessCache\Redis;
+namespace LesCache\Redis;
 
+use Override;
 use DateInterval;
 use DateTimeImmutable;
-use LessCache\AbstractCache;
+use LesCache\AbstractCache;
 use Redis;
 
 final class RedisCache extends AbstractCache
@@ -13,6 +14,7 @@ final class RedisCache extends AbstractCache
     public function __construct(private readonly Redis $redis)
     {}
 
+    #[Override]
     public function get(string $key, mixed $default = null): mixed
     {
         $value = $this->redis->get($key);
@@ -24,6 +26,7 @@ final class RedisCache extends AbstractCache
         return unserialize($value);
     }
 
+    #[Override]
     public function set(string $key, mixed $value, DateInterval|int|null $ttl = null): bool
     {
         if (isset($ttl)) {
@@ -40,6 +43,7 @@ final class RedisCache extends AbstractCache
         return $this->redis->set($key, serialize($value)) === true;
     }
 
+    #[Override]
     public function delete(string $key): bool
     {
         $this->redis->del($key);
@@ -47,11 +51,13 @@ final class RedisCache extends AbstractCache
         return true;
     }
 
+    #[Override]
     public function clear(): bool
     {
         return $this->redis->flushDB();
     }
 
+    #[Override]
     public function has(string $key): bool
     {
         return $this->redis->exists($key) === 1;

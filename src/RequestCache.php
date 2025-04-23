@@ -1,8 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace LessCache;
+namespace LesCache;
 
+use Override;
 use DateInterval;
 use DateTime;
 
@@ -14,6 +15,7 @@ final class RequestCache extends AbstractCache
     /** @var array<string, array{expire: int | null, value: mixed}> */
     private array $cache = [];
 
+    #[Override]
     public function get(string $key, mixed $default = null): mixed
     {
         return $this->has($key)
@@ -21,6 +23,7 @@ final class RequestCache extends AbstractCache
             : $default;
     }
 
+    #[Override]
     public function set(string $key, mixed $value, \DateInterval|int|null $ttl = null): bool
     {
         if ($ttl instanceof DateInterval) {
@@ -39,12 +42,14 @@ final class RequestCache extends AbstractCache
         return true;
     }
 
+    #[Override]
     public function delete(string $key): bool
     {
         unset($this->cache[$key]);
         return true;
     }
 
+    #[Override]
     public function clear(): bool
     {
         $this->cache = [];
@@ -52,6 +57,7 @@ final class RequestCache extends AbstractCache
         return true;
     }
 
+    #[Override]
     public function has(string $key): bool
     {
         if (!array_key_exists($key, $this->cache)) {

@@ -1,11 +1,11 @@
 {
-  "name": "lessname/cache",
+  "name": "lesname/cache",
   "license": "MIT",
   "require": {
     "php": "^8.4.0",
 
     "psr/simple-cache": "^3.0.0",
-    "psr/container": "^1.0.0 || ^2.0.0"
+    "psr/container": "^2.0.0"
   },
   "require-dev": {
     "ext-redis": "*",
@@ -16,12 +16,12 @@
   },
   "autoload": {
     "psr-4": {
-      "LessCache\\": "src/"
+      "LesCache\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "LessCacheTest\\": "test/"
+      "LesCacheTest\\": "test/"
     }
   }
 }
