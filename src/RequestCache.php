@@ -43,13 +43,20 @@ final class RequestCache extends AbstractCache
         return true;
     }
 
+    /**
+     * @psalm-external-mutation-free
+     */
     #[Override]
     public function delete(string $key): bool
     {
         unset($this->cache[$key]);
+
         return true;
     }
 
+    /**
+     * @psalm-external-mutation-free
+     */
     #[Override]
     public function clear(): bool
     {

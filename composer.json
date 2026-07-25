@@ -2,7 +2,7 @@
   "name": "lesname/cache",
   "license": "MIT",
   "require": {
-    "php": "^8.4.0",
+    "php": "^8.5.0",
 
     "psr/simple-cache": "^3.0.0",
     "psr/container": "^2.0.0"
@@ -11,7 +11,7 @@
     "ext-redis": "*",
 
     "squizlabs/php_codesniffer": "^4.0.0",
-    "phpunit/phpunit": "^12.0.0",
+    "phpunit/phpunit": "^13.0.0",
 
     "vimeo/psalm": "^7.0.0-beta9",
 
