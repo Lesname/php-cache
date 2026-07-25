@@ -12,6 +12,9 @@ use Redis;
 
 final class RedisCache extends AbstractCache
 {
+    /**
+     * @psalm-mutation-free
+     */
     public function __construct(private readonly Redis $redis)
     {}
 
@@ -52,10 +55,15 @@ final class RedisCache extends AbstractCache
         return true;
     }
 
+    /**
+     * @psalm-suppress MixedAssignment
+     */
     #[Override]
     public function clear(): bool
     {
-        return $this->redis->flushDB();
+        $result = $this->redis->flushDB();
+
+        return $result === true || $result instanceof Redis;
     }
 
     #[Override]
