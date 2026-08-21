@@ -9,11 +9,9 @@ use DateInterval;
 use DateTime;
 
 /**
- * Cache within the request cycle
- *
- * @deprecated use ArrayCache
+ * Cache within an array
  */
-final class RequestCache extends AbstractCache
+final class ArrayCache extends AbstractCache
 {
     /** @var array<string, array{expire: int | null, value: mixed}> */
     private array $cache = [];
